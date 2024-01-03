@@ -21,14 +21,13 @@ async function getRestaurants(lat, lon) {
     return cachedData;
   }
 
-
   const url = `https://api.yelp.com/v3/businesses/search?latitude=${lat}&longitude=${lon}&sort_by=best_match&limit=20`;
 
   try {
     const options = {
       headers: {
         accept: 'application/json',
-        Authorization: `Bearer ${yelpApiKey}`
+        Authorization: `Bearer ${process.env.YELP_API_KEY}`
       }
     };
     const yelpResponse = await axios.get(url, options);
@@ -46,7 +45,7 @@ async function getRestaurants(lat, lon) {
 
     return restaurants;
   } catch (error) {
-    console.log('Error fetching Yelp data', error);
+    console.log('Error fetching yelp data', error);
     throw error;
   }
 }

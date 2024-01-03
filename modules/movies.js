@@ -20,7 +20,7 @@ async function getMovies() {
     return cache.get('movies');
   }
 
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${movieApiKey}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_release_type=2`;
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.MOVIE_API_KEY}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_release_type=2`;
 
   try {
     const movieResponse = await axios.get(url);
