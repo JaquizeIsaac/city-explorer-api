@@ -21,7 +21,6 @@ async function getRestaurants(lat, lon) {
     return cachedData;
   }
 
-  const yelpApiKey = '77c1abe22cmsh825c9f07989b505p165169jsn13961fd3ee78';
 
   const url = `https://api.yelp.com/v3/businesses/search?latitude=${lat}&longitude=${lon}&sort_by=best_match&limit=20`;
 

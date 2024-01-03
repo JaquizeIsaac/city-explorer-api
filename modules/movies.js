@@ -20,8 +20,6 @@ async function getMovies() {
     return cache.get('movies');
   }
 
-  const movieApiKey = 'b1a8686216706ad6eb219e88773fe0a0'; 
-
   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${movieApiKey}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_release_type=2`;
 
   try {
